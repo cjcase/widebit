@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/widebit.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>Widebit</title>
+  </head>
+  <body>
+    <header>
+      <!-- Nav -->
+      <nav class="navbar navbar-dark bg-dark justify-content-between mb-5">
+        <a class="navbar-brand" href="#">
+          <img class="d-inline-block align-top" src="img/logo.png" width="30" height="30"> Widebit
+        </a>
+        <span class="navbar-text">{{ build }}</span>
+      </nav>
+    </header>
+    <main role="main">
+      <div class="container">
+        <!-- greetz -->
+        <div class="jumbotron">
+          <h1 class="display-4">Welcome, {{user.first_name}}!</h1>
+          <p class="lead">Time to log your progress, how is that diet going sexy?</p>
+        </div>
+        <!-- Date row -->
+        <div class="row">
+          <div class="col-md-6">
+            <h2>{{ date|today }}</h2>
+          </div>
+          <div class="col-md-6">          
+            <div class="form-group">
+              <form class="form-inline">
+                <input class="form-control" type="date" name="date">
+                <button class="btn btn-md btn-outline-success" type="submit">Change</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!-- Nutrients row -->
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <div class="card text-white bg-dark">
+              <img class="card-img-top" src="">
+              <div class="card-body">
+                <h5 class="card-title">{{ nutrient.name }}</h5>
+                <p class="card-subtitle">{{ nutrient.desc }}</p>
+                <p class="card-text">Goal: <span class=""> </span></p>
+                <p class="card-text">Current: <span class=""> </span></p>
+                  <div class="progress mb-2" style="height: 1px;">
+                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>              
+                <div class="btn-group btn-group-lg" role="group">
+                  <button type="button" class="btn btn-danger"><i class="material-icons">clear</i></button>
+                  <button type="button" class="btn btn-success"><i class="material-icons">add</i></button>
+                </div>
+              </div>
+            </div>          
+          </div>
+        </div>
+        <!-- Meal head row -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Meals</h2>
+          </div>
+        </div>
+        <hr>
+        <!-- Meal form row -->
+        <div class="row">
+          <div class="col-md-12">
+            <h5>Add new meal</h5>
+            <div class="form-group">
+              <form>
+                <textarea class="form-control" id="mealdesc" rows="3" placeholder="what are you eating?"></textarea>
+                <button class="btn btn-outline-success">Add meal</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Meal table row -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">Meal {{ meal.num }}</div>
+              <div class="card-body">
+                <p class="card-text">{{ meal.text }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+
+    <footer class="mt-5">
+      <div class="container text-center">
+        <p>made with &lt;3 by Cj</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

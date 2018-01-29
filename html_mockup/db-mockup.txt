@@ -1,0 +1,7 @@
+profile(user,weight,bf)
+goal(user,weight,bf)
+nutrient(name,desc)
+nutrient_goal(nutrient,amount)
+reg(date,nutrient,amount)
+build(date,commit)
+meal(user,date,text)
