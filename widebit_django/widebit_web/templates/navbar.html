@@ -1,0 +1,12 @@
+{% load staticfiles %}
+{% block header %}
+    <header>
+      <!-- Nav -->
+      <nav class="navbar navbar-dark bg-dark justify-content-between mb-5">
+        <a class="navbar-brand" href="#">
+          <img class="d-inline-block align-top" src="{% static 'img/logo.png' %}" width="30" height="30"> Widebit
+        </a>
+        <span class="navbar-text">{{ build }}</span>
+      </nav>
+    </header>
+{% endblock %}
